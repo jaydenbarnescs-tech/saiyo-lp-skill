@@ -234,6 +234,8 @@ def generate_sub_page(sub: dict, config: dict) -> str:
 
     section_data = {k.upper(): v for k, v in sub_data_full.items()}
     section_data["PARENT_URL"] = f"/lp/{config['slug']}"
+    section_data["LP_SLUG"] = config["slug"]
+    section_data["COMPANY_NAME_JP"] = config.get("brand", {}).get("company_name_jp", "")
     sub_html = fill(sub_tpl, section_data)
 
     # Build simplified nav for sub-page

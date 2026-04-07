@@ -1,4 +1,4 @@
-<!-- ENTRY SUB-PAGE -->
+<!-- ENTRY SUB-PAGE — real form, posts to /api/lp-entry -->
 <section class="block" style="padding-top:160px">
   <div class="wrap fade-in" style="max-width:720px">
     <a href="{{PARENT_URL}}" class="btn-ghost" style="margin-bottom:40px">← 採用トップに戻る</a>
@@ -9,34 +9,154 @@
 
     <p style="color:var(--ct2);line-height:2;margin-bottom:32px">{{ENTRY_INTRO}}</p>
 
-    <div style="background:#fff;border-radius:var(--rad);box-shadow:var(--sh);padding:40px;margin-bottom:40px">
+    <!-- ── FORM ─────────────────────────────────────────────────────────── -->
+    <div id="lp-entry-form-wrap" style="background:#fff;border-radius:var(--rad);box-shadow:var(--sh);padding:40px;margin-bottom:40px">
+      <div id="lp-entry-error" style="display:none;background:#fee2e2;color:#991b1b;padding:14px 18px;border-radius:8px;margin-bottom:24px;font-size:.88rem;font-weight:500"></div>
+
       <div style="margin-bottom:24px">
         <label style="display:block;font-weight:700;color:var(--c1);margin-bottom:8px;font-size:.9rem">お名前 <span style="color:var(--c2)">*</span></label>
-        <input type="text" id="entry-name" style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem">
+        <input type="text" id="lp-entry-name" maxlength="200" required
+          style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;transition:.2s"
+          onfocus="this.style.borderColor='var(--c2)'" onblur="this.style.borderColor='#e5e7eb'">
       </div>
+
       <div style="margin-bottom:24px">
         <label style="display:block;font-weight:700;color:var(--c1);margin-bottom:8px;font-size:.9rem">メールアドレス <span style="color:var(--c2)">*</span></label>
-        <input type="email" id="entry-email" style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem">
+        <input type="email" id="lp-entry-email" maxlength="320" required
+          style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;transition:.2s"
+          onfocus="this.style.borderColor='var(--c2)'" onblur="this.style.borderColor='#e5e7eb'">
       </div>
+
       <div style="margin-bottom:24px">
         <label style="display:block;font-weight:700;color:var(--c1);margin-bottom:8px;font-size:.9rem">電話番号</label>
-        <input type="tel" id="entry-phone" style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem">
+        <input type="tel" id="lp-entry-phone" maxlength="20"
+          style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;transition:.2s"
+          onfocus="this.style.borderColor='var(--c2)'" onblur="this.style.borderColor='#e5e7eb'">
       </div>
+
       <div style="margin-bottom:24px">
         <label style="display:block;font-weight:700;color:var(--c1);margin-bottom:8px;font-size:.9rem">応募職種 <span style="color:var(--c2)">*</span></label>
-        <select id="entry-position" style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem">
+        <select id="lp-entry-position" required
+          style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;background:#fff;transition:.2s"
+          onfocus="this.style.borderColor='var(--c2)'" onblur="this.style.borderColor='#e5e7eb'">
+          <option value="">選択してください</option>
 {{POSITION_OPTIONS}}
         </select>
       </div>
+
       <div style="margin-bottom:32px">
         <label style="display:block;font-weight:700;color:var(--c1);margin-bottom:8px;font-size:.9rem">志望動機・メッセージ</label>
-        <textarea id="entry-message" rows="5" style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;resize:vertical"></textarea>
+        <textarea id="lp-entry-message" rows="5" maxlength="5000"
+          style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:.95rem;resize:vertical;transition:.2s"
+          onfocus="this.style.borderColor='var(--c2)'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
       </div>
+
+      <!-- Honeypot — hidden from real users, bots fill it -->
+      <div style="position:absolute;left:-9999px;top:-9999px;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <label>Website (leave blank)</label>
+        <input type="text" id="lp-entry-website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- Hidden context fields filled by the skill at build time -->
+      <input type="hidden" id="lp-entry-slug" value="{{LP_SLUG}}">
+      <input type="hidden" id="lp-entry-company" value="{{COMPANY_NAME_JP}}">
+
       <div style="text-align:center">
-        <button onclick="document.location='mailto:{{ENTRY_EMAIL}}?subject=採用エントリー&body='+encodeURIComponent('お名前: '+document.getElementById('entry-name').value+'\nメール: '+document.getElementById('entry-email').value+'\n電話: '+document.getElementById('entry-phone').value+'\n応募職種: '+document.getElementById('entry-position').value+'\n\n'+document.getElementById('entry-message').value)" class="btn-main">送信する →</button>
+        <button id="lp-entry-submit" type="button" class="btn-main" style="min-width:200px">
+          <span id="lp-entry-submit-label">送信する →</span>
+          <span id="lp-entry-submit-spinner" style="display:none">送信中…</span>
+        </button>
       </div>
     </div>
 
-    <p style="text-align:center;color:var(--ct2);font-size:.82rem">送信ボタンを押すとメールアプリが開きます。内容を確認の上、送信してください。</p>
+    <!-- ── SUCCESS CARD (hidden initially) ──────────────────────────────── -->
+    <div id="lp-entry-success" style="display:none;background:#fff;border-radius:var(--rad);box-shadow:var(--sh);padding:60px 40px;text-align:center;margin-bottom:40px">
+      <div style="width:80px;height:80px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 style="font-size:1.4rem;font-weight:900;color:var(--c1);margin-bottom:14px">ご応募ありがとうございます</h3>
+      <p style="color:var(--ct2);line-height:2;margin-bottom:32px">担当者より2〜3営業日以内にご連絡いたします。<br>今しばらくお待ちください。</p>
+      <a href="{{PARENT_URL}}" class="btn-ghost">採用トップに戻る</a>
+    </div>
+
+    <p id="lp-entry-privacy" style="text-align:center;color:var(--ct2);font-size:.78rem">送信いただいた個人情報は、採用選考の目的のみに使用いたします。</p>
   </div>
 </section>
+
+<script>
+(function(){
+  var btn = document.getElementById('lp-entry-submit');
+  if (!btn) return;
+
+  function showError(msg){
+    var err = document.getElementById('lp-entry-error');
+    err.textContent = msg;
+    err.style.display = 'block';
+    err.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  function hideError(){
+    document.getElementById('lp-entry-error').style.display = 'none';
+  }
+  function setLoading(loading){
+    btn.disabled = loading;
+    btn.style.opacity = loading ? '0.6' : '1';
+    btn.style.cursor = loading ? 'wait' : 'pointer';
+    document.getElementById('lp-entry-submit-label').style.display = loading ? 'none' : 'inline';
+    document.getElementById('lp-entry-submit-spinner').style.display = loading ? 'inline' : 'none';
+  }
+
+  btn.addEventListener('click', async function(){
+    hideError();
+
+    var name     = document.getElementById('lp-entry-name').value.trim();
+    var email    = document.getElementById('lp-entry-email').value.trim();
+    var phone    = document.getElementById('lp-entry-phone').value.trim();
+    var position = document.getElementById('lp-entry-position').value;
+    var message  = document.getElementById('lp-entry-message').value.trim();
+    var website  = document.getElementById('lp-entry-website').value;  // honeypot
+    var slug     = document.getElementById('lp-entry-slug').value;
+    var company  = document.getElementById('lp-entry-company').value;
+
+    // Client-side validation (server validates again)
+    if (!name)     { showError('お名前を入力してください'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('有効なメールアドレスを入力してください'); return;
+    }
+    if (!position) { showError('応募職種を選択してください'); return; }
+
+    setLoading(true);
+    try {
+      var res = await fetch('/api/lp-entry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          lp_slug: slug,
+          company_jp: company,
+          name: name,
+          email: email,
+          phone: phone,
+          position: position,
+          message: message,
+          website: website
+        })
+      });
+      var data = await res.json().catch(function(){ return {}; });
+
+      if (!res.ok) {
+        showError(data.error || '送信に失敗しました。時間を置いて再度お試しください。');
+        setLoading(false);
+        return;
+      }
+
+      // Success — swap form for success card
+      document.getElementById('lp-entry-form-wrap').style.display = 'none';
+      document.getElementById('lp-entry-privacy').style.display = 'none';
+      document.getElementById('lp-entry-success').style.display = 'block';
+      document.getElementById('lp-entry-success').scrollIntoView({behavior:'smooth', block:'center'});
+    } catch (e) {
+      showError('ネットワークエラーが発生しました。接続を確認して再度お試しください。');
+      setLoading(false);
+    }
+  });
+})();
+</script>

@@ -210,7 +210,7 @@
         "cta_headline": "あなたの応募をお待ちしています。",
         "cta_sub": "まずはカジュアル面談からでもOK。工場見学も随時受付中です。",
         "cta_button_label": "エントリーする →",
-        "cta_button_href": "mailto:recruit@mirai-kogyo.example.com"
+        "cta_button_href": "/lp/yamaguchi/entry"
       }
     },
     {
@@ -235,5 +235,20 @@
       }
     }
   ],
-  "sub_pages": []
+  "sub_pages": [
+    {
+      "type": "entry",
+      "slug": "entry",
+      "title": "エントリー",
+      "data": {
+        "entry_intro": "ミライ工業の採用にご興味をお持ちいただきありがとうございます。以下のフォームに必要事項をご記入の上、送信してください。担当者より2〜3営業日以内にご連絡いたします。",
+        "positions": [
+          "製造スタッフ",
+          "技術営業",
+          "品質管理エンジニア",
+          "生産管理・事務"
+        ]
+      }
+    }
+  ]
 }
