@@ -1,0 +1,33 @@
+<!-- OPENING DETAIL SUB-PAGE -->
+<section class="block" style="padding-top:160px">
+  <div class="wrap fade-in" style="max-width:900px">
+    <a href="{{PARENT_URL}}" class="btn-ghost" style="margin-bottom:40px">← 採用トップに戻る</a>
+    <div class="sec-head" style="margin-bottom:40px">
+      <span class="sec-en">Position</span>
+      <p class="jp-sub">{{POSITION_JP}}</p>
+    </div>
+    <img src="{{HERO_IMAGE_URL}}" alt="{{POSITION_JP}}" style="width:100%;border-radius:var(--rad);box-shadow:var(--sh);margin-bottom:48px">
+
+    <h3 style="font-size:1.4rem;font-weight:900;color:var(--c1);margin-bottom:16px">仕事内容</h3>
+    <p style="color:var(--ct2);line-height:2;margin-bottom:40px">{{JOB_DESCRIPTION}}</p>
+
+    <h3 style="font-size:1.4rem;font-weight:900;color:var(--c1);margin-bottom:16px">主な業務</h3>
+    <ul style="color:var(--ct2);line-height:2;margin-bottom:40px;padding-left:24px">
+{{RESPONSIBILITIES_LIST}}
+    </ul>
+
+    <h3 style="font-size:1.4rem;font-weight:900;color:var(--c1);margin-bottom:16px">応募資格</h3>
+    <ul style="color:var(--ct2);line-height:2;margin-bottom:40px;padding-left:24px">
+{{REQUIREMENTS_LIST}}
+    </ul>
+
+    <h3 style="font-size:1.4rem;font-weight:900;color:var(--c1);margin-bottom:16px">選考フロー</h3>
+    <ol style="color:var(--ct2);line-height:2;margin-bottom:40px;padding-left:24px">
+{{PROCESS_STEPS}}
+    </ol>
+
+    <div style="text-align:center;padding:40px 0">
+      <a href="{{PARENT_URL}}#entry" class="btn-main">この職種に応募する →</a>
+    </div>
+  </div>
+</section>

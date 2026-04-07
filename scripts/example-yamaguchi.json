@@ -1,0 +1,239 @@
+{
+  "slug": "yamaguchi",
+  "mode": "house",
+  "brand": {
+    "company_name_jp": "株式会社ミライ工業",
+    "company_name_en": "Mirai Kogyo Inc.",
+    "logo_letter": "M",
+    "colors": {
+      "c1": "#1B2B5A",
+      "c2": "#E85D3A",
+      "c3": "#f59e0b",
+      "c2_dark": "#c94a2b"
+    },
+    "fonts": {
+      "en": "\"Outfit\",sans-serif",
+      "jp": "\"Noto Sans JP\",sans-serif"
+    },
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800;900&display=swap"
+  },
+  "page": {
+    "title": "採用情報｜株式会社ミライ工業",
+    "meta_description": "株式会社ミライ工業の採用サイト。エンジニア、営業職を募集中。"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "data": {
+        "hero_image_url": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490560838_31d7d583.jpg",
+        "hero_eyebrow": "Recruiting 2026",
+        "hero_en_word": "Recruitment",
+        "hero_jp_headline": "つくる力で、未来を変えていく。",
+        "hero_sub_copy": "技術と情熱で、まだ見ぬ価値を形にする。<br>次の30年を一緒に描く仲間を、私たちは探しています。",
+        "hero_cta_label": "採用職種を見る →",
+        "hero_cta_href": "#openings"
+      }
+    },
+    {
+      "type": "about",
+      "data": {
+        "about_subtitle": "ミライ工業を知る",
+        "about_image_url": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490719712_52484682.jpg",
+        "about_image_alt": "チームミーティング",
+        "about_headline": "「つくる」の先にある<br>笑顔のために。",
+        "about_paragraph_1": "創業から30年、精密部品の製造・加工で日本のモノづくりを支え続けてきました。最先端の5軸マシニングセンターとベテランの手技を掛け合わせ、ミクロン単位の精度を日常的に実現しています。",
+        "about_paragraph_2": "私たちが大切にしているのは「困った」を「ありがとう」に変えること。技術力だけでなく、対話する力を武器に、次の世代へ挑戦のバトンを繋いでいきます。",
+        "about_cta_label": "私たちの強み →",
+        "about_cta_href": "#strengths"
+      }
+    },
+    {
+      "type": "strengths",
+      "data": {
+        "subtitle": "選ばれ続ける3つの理由",
+        "cards": [
+          {
+            "title": "5軸加工 × IoTスマート工場",
+            "desc": "業界トップクラスの設備投資で、複雑形状も一発加工。リアルタイム稼働モニタリングで品質とスピードを両立しています。"
+          },
+          {
+            "title": "国家資格ホルダー集団",
+            "desc": "技能検定1級をはじめ資格保有者が多数。若手には1on1メンター制度で技術を伝承し、全員が成長できる文化を築いています。"
+          },
+          {
+            "title": "年間休日125日の働きやすさ",
+            "desc": "完全週休2日制に加えて有給取得率96%。残業月平均12時間。仕事もプライベートも充実できる環境を整備し続けています。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "data",
+      "data": {
+        "subtitle": "数字で見るミライ工業",
+        "pills": [
+          {
+            "value": "30",
+            "label": "創業年数",
+            "unit": "年"
+          },
+          {
+            "value": "240",
+            "label": "社員数",
+            "unit": "名"
+          },
+          {
+            "value": "96",
+            "label": "有給取得率",
+            "unit": "%"
+          },
+          {
+            "value": "125",
+            "label": "年間休日",
+            "unit": "日"
+          },
+          {
+            "value": "38",
+            "label": "平均年齢",
+            "unit": "歳"
+          }
+        ]
+      }
+    },
+    {
+      "type": "voices",
+      "data": {
+        "subtitle": "先輩たちのリアルな声",
+        "cards": [
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490763259_a4b29a8e.jpg",
+            "image_alt": "山田 太一",
+            "dept_en": "Manufacturing Lead",
+            "name_jp": "山田 太一",
+            "meta": "2016年入社 ／ 工学部卒",
+            "quote": "入社7年目でチームリーダーを任されました。技術を深掘りする面白さと、仲間と一緒にゴールを達成する充実感、どちらも味わえるのがこの会社の魅力です。"
+          },
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490805233_ee517108.jpg",
+            "image_alt": "鈴木 さくら",
+            "dept_en": "Quality Assurance",
+            "name_jp": "鈴木 さくら",
+            "meta": "2020年入社 ／ 理工学部卒",
+            "quote": "「0.01mmの差にこだわる」カルチャーが全社に根付いていて、妥協しない姿勢が自分自身の成長ドライバーになっています。検査データを分析して改善提案が通った時は本当に嬉しいです。"
+          },
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490845763_2fbb64bd.jpg",
+            "image_alt": "田中 裕介",
+            "dept_en": "Technical Sales",
+            "name_jp": "田中 裕介",
+            "meta": "2018年入社 ／ 経済学部卒",
+            "quote": "文系からモノづくり業界に飛び込みましたが、先輩のサポートで技術知識がどんどん身につきます。お客様の「あなたに頼んでよかった」がいちばんのモチベーションです。"
+          }
+        ]
+      }
+    },
+    {
+      "type": "openings",
+      "data": {
+        "subtitle": "現在募集中のポジション",
+        "cards": [
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490884024_debfcf15.jpg",
+            "image_alt": "製造スタッフ",
+            "badge": "正社員",
+            "title": "製造スタッフ",
+            "desc": "CNC旋盤・5軸マシニングセンターを使った精密部品の加工業務。未経験からでもメンター付きで着実にスキルアップできます。",
+            "href": "#entry"
+          },
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775490944467_48d0f147.jpg",
+            "image_alt": "技術営業",
+            "badge": "正社員",
+            "title": "技術営業",
+            "desc": "既存顧客のフォローアップと新規開拓。技術知識を活かした課題解決型の提案営業です。文系出身メンバーも多数活躍中。",
+            "href": "#entry"
+          },
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775491234458_a609b3a8.jpg",
+            "image_alt": "品質管理",
+            "badge": "正社員",
+            "title": "品質管理エンジニア",
+            "desc": "三次元測定機を用いた検査・測定、データ分析から改善提案まで。ISO9001に基づく品質マネジメントの中核を担います。",
+            "href": "#entry"
+          },
+          {
+            "image": "https://mgc-pass-proxy.duckdns.org/img/gen_1775491281979_eaf00695.jpg",
+            "image_alt": "生産管理",
+            "badge": "正社員",
+            "title": "生産管理・事務",
+            "desc": "生産スケジュール管理、在庫管理、受発注業務が中心。Excel・社内システムを活用し、工場の「頭脳」として現場を支えます。",
+            "href": "#entry"
+          }
+        ]
+      }
+    },
+    {
+      "type": "welfare",
+      "data": {
+        "subtitle": "待遇・福利厚生",
+        "items": [
+          {
+            "term": "給与",
+            "desc": "月給22万〜45万円（経験・スキルに応じて優遇）"
+          },
+          {
+            "term": "賞与",
+            "desc": "年2回（6月・12月）過去実績 計4.5ヶ月分"
+          },
+          {
+            "term": "休日",
+            "desc": "完全週休2日（土日祝）、年間休日125日、長期休暇あり"
+          },
+          {
+            "term": "保険",
+            "desc": "社会保険完備（健康・厚生年金・雇用・労災）"
+          },
+          {
+            "term": "手当",
+            "desc": "通勤手当（上限5万円）、住宅・家族・資格手当"
+          },
+          {
+            "term": "制度",
+            "desc": "退職金、社員食堂、資格取得支援、産休育休（取得実績あり）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "data": {
+        "cta_headline": "あなたの応募をお待ちしています。",
+        "cta_sub": "まずはカジュアル面談からでもOK。工場見学も随時受付中です。",
+        "cta_button_label": "エントリーする →",
+        "cta_button_href": "mailto:recruit@mirai-kogyo.example.com"
+      }
+    },
+    {
+      "type": "map",
+      "data": {
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.048!2d135.5023!3d34.6937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQxJzM3LjMiTiAxMzXCsDMwJzA4LjMiRQ!5e0!3m2!1sja!2sjp"
+      }
+    },
+    {
+      "type": "footer",
+      "data": {
+        "company_name_jp": "株式会社ミライ工業",
+        "company_tagline": "確かな技術で、未来を創る。",
+        "company_address_line_1": "〒530-0001 大阪府大阪市北区梅田1-1-1",
+        "company_address_line_2": "",
+        "company_phone": "06-1234-5678",
+        "company_founded": "平成6年4月",
+        "company_representative": "代表取締役 中村 誠一",
+        "company_business": "精密部品製造・加工、産業機器開発",
+        "company_name_en": "Mirai Kogyo Inc.",
+        "year": "2026"
+      }
+    }
+  ],
+  "sub_pages": []
+}

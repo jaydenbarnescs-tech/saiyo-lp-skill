@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+
+# Generated files (built LPs go to nippo-sync, not here)
+/tmp/
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Temporary scrape manifests
+saiyo_ref_*.json
+saiyo_build_*.log
